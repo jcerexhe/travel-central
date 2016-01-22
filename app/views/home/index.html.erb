@@ -1,0 +1,8 @@
+<div class="home">
+  <div class="container text-center">
+    <h1 class="slogan">Welcome to Travel Central</h1>
+    <% unless user_signed_in? %>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-default' %>
+    <% end %>
+  </div>
+</div>

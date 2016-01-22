@@ -1,0 +1,25 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <img src="https://maps.googleapis.com/maps/api/staticmap?&zoom=13&size=600x300&maptype=terrain
+  &markers=color:red%7Clabel:C%7C<%= @album.latitude %>,<%= @album.longitude %>
+  &key=AIzaSyAdqLZLs_a7Ok_HgzTQLN2ya8i3CrPJU6M">
+
+  <h1>
+    <%= @album.title %>
+  </h1>
+
+  <h3>
+    <%= @album.city %>, <%= @album.country %>
+  </h3>
+
+
+  <% @album.album_images.each do |image| %>
+    <div class="col-md-4">
+      <%= image_tag(image.file, class: 'img-responsive') %>
+    </div>
+  <% end %>
+
+
+  <%= link_to 'Edit', edit_album_path(@album) %>
+</div>

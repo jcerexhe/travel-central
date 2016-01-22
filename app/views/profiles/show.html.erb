@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag(@profile.picture, class: 'img-responsive') %>
+      <h1><%= @profile.first_name %> <%= @profile.last_name %></h1>
+      <h3><%= @profile.occupation %></h3>
+      <h3><%= @profile.age %></h3>
+      <h3><%= @profile.favourite_places %></h3>
+      <p><%= @profile.bio %></p>
+    </div>
+    <div class="col-md-6">
+      <%= link_to 'Add Album', new_album_path, class: 'btn btn-primary' %>
+      <%= link_to 'Add Image', new_album_image_path, class: 'btn btn-warning' %>
+      <h3>Albums</h3>
+      <% @albums.each do |album| %>
+        <h4><%= link_to album.title, album_path(album) %></h4>
+      <% end %>
+
+
+
+
+
+
+      <% @albums.each do |album| %>
+        <% if album.album_images %>
+          <%# image_tag(album.album_images.first.file) %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @profile == current_user.profile %>
+    <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <% end %>
+
+  <%= link_to 'Back', profiles_path %>
+</div>
