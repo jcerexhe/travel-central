@@ -14,10 +14,11 @@
       <%= link_to 'Add Album', new_album_path, class: 'btn btn-primary' %>
       <%= link_to 'Add Image', new_album_image_path, class: 'btn btn-warning' %>
       <h3>Albums</h3>
-      <% @albums.each do |album| %>
-        <h4><%= link_to album.title, album_path(album) %></h4>
+      <% if @album.any? %>
+        <% @albums.each do |album| %>
+          <h4><%= link_to album.title, album_path(album) %></h4>
+        <% end %>
       <% end %>
-
 
 
 
