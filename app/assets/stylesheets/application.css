@@ -15,6 +15,7 @@
  */
 body {
   font-size: 18px;
+  height: 100vh;
 }
 
 h1 {
@@ -37,7 +38,7 @@ h1 {
 .home {
   background-image: url('http://res.cloudinary.com/cerexhe/image/upload/v1453440905/home-bg_rottkl.jpg');
   color: white;
-  height: 800px;
+  height: 100%;
   margin-top: -70px;
   background-size: cover;
 }
